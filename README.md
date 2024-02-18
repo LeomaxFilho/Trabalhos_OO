@@ -2,4 +2,4 @@
 Trabalhos da cadeira de OO
 
 <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B-study-blue">
-<p align="center">Arquivos dos meus estudos de OO</p>
+<p align="center">Arquivos dos meus estudos de OO <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B-study-blue"> </p>
