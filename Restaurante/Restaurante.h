@@ -45,6 +45,7 @@ private:
     Pedido pedidos[100];
     
 public:
+
     void adicionarPedido(Pedido p);
 
     void MesaDeRestaurante::adicionarPedido(Pedido p)
@@ -90,15 +91,13 @@ public:
         }
         return tot;
     }
-
-    //-----------------------------------------AQUI---------------------------------
     
     void exibeConta(){
 
         for (Pedido& pedido : pedidos)
         {
-            
-            
+
+            cout << pedido.getNumero() << " - " << pedido.getDesc() << " - " << pedido.getQuant() << " - " << pedido.getPreco() << " - R$" << pedido.getTotal() << endl ;
         }
     }
 };
@@ -126,6 +125,8 @@ public:
     }
 
     MesaDeRestaurante getMesa(int indMesa){
+        
         mesas[indMesa].exibeConta();
+
     }
 };
