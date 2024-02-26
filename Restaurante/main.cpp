@@ -11,28 +11,30 @@ int main(){
     int quant;
     float preco;
     
-    //Restaurante rest;
+    Restaurante rest;
        
-    
-
     do
     {
-        cin >> indMesa;
         cin >> numero;
         cin.ignore();
 
         getline(cin, desc);
+        if (numero == -1){
+            break;
+        }
         cin >> quant;
         cin >> preco;
-        Pedido p(indMesa, desc, quant, preco);
+        cin >> indMesa;
+        
+        
+        Pedido p(numero, desc, quant, preco);
         rest.adicionarPedido(p, indMesa);
-
-    } while (indMesa != -1);
-
+        
+    } while (numero != -1);
     
+    rest.getMesa(1);
 
     return 0;
 }
-
 
 

@@ -12,6 +12,8 @@ private:
     float preco;
 
 public:
+    Pedido() : numero(0), desc(""), quant(0), preco(0){}
+
     Pedido(int num, string des, int q, float pre) : numero(num), desc(des), quant(q), preco(pre){}
     float getTotal(){
 
@@ -45,10 +47,9 @@ private:
     Pedido pedidos[100];
     
 public:
+    MesaDeRestaurante() {}
 
-    void adicionarPedido(Pedido p);
-
-    void MesaDeRestaurante::adicionarPedido(Pedido p)
+    void adicionarPedido(Pedido p)
     {
 
         int end = 0;
@@ -108,6 +109,8 @@ private:
     MesaDeRestaurante mesas[100];
 
 public:
+    Restaurante() {}
+
     void adicionarPedido(Pedido p, int indMesa){
 
         mesas[indMesa].adicionarPedido(p);
@@ -124,7 +127,7 @@ public:
         return tot;
     }
 
-    MesaDeRestaurante getMesa(int indMesa){
+    void getMesa(int indMesa){
         
         mesas[indMesa].exibeConta();
 

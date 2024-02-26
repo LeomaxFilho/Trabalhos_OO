@@ -21,3 +21,19 @@ void MesaDeRestaurante::adicionarPedido(Pedido p){
         }
         
     }
+
+
+    /*
+    void adicionarPedido(Pedido p) {
+        
+        for (Pedido& pedido : pedidos) {
+            Pedido g;
+            if (pedido.getNumero() == p.getNumero()) {
+                pedido(pedido.getNumero(),pedido.getDescricao(), pedido.getQuantidade() + p.getQuantidade(), pedido.getPreco());
+                return;
+            }
+        }
+        pedidos[numPedidos++] = p;
+    }
+
+    */

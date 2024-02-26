@@ -11,13 +11,12 @@ int main(){
     int qtdSimbolo = 1;
     string simbolo = "";
 
-    for (int i = 1; i <= altura; i++)
+    for (int i = 0; i < altura - 1; i++)
     {   
-        
 
         qtdEspacos = altura - i;
 
-        for (int j = 1; j <= qtdEspacos; j++)
+        for (int j = 0; j < qtdEspacos - 1; j++)
         {
             espacos += " ";
         }
@@ -32,6 +31,7 @@ int main(){
        qtdSimbolo += 2;
        espacos = "";
        simbolo = "";
+       
     }
     
 

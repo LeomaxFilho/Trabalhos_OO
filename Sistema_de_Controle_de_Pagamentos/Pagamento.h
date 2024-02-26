@@ -37,7 +37,6 @@ public:
 class ControleDePagamentos : public Pagamento
 {
 private:
-    
     Pagamento pagamentos[100];
 
 public:
