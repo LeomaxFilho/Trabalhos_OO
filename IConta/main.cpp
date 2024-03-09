@@ -18,7 +18,7 @@
         int numConta;
         float salarioMensal;
         float saldo;
-        float limite;
+        float limite = 0;
 
     public:
         ~Conta(){}
@@ -26,7 +26,7 @@
         Conta(string n, int nc, float sm ) :  nomeCliente(n), numConta(nc), salarioMensal(sm), saldo(0) {
         }
 
-        void definirLimite(){
+        virtual void definirLimite(){
             limite += (2*salarioMensal);
             saldo += limite;
             
@@ -61,12 +61,10 @@
         
         void sacar(float s){
             saldo -= s;
-            cout << saldo << " saldo saque\n";
         }
 
         void depositar(int d){
             saldo += d;
-            cout << saldo << " saldo deposito \n";
         }
 
 
@@ -80,8 +78,6 @@
         ContaEspecial(string n, int nc, float sm ) :  Conta( n,  nc,  sm ) {}
 
         void definirLimite(){
-            cout << salarioMensal << "  salario \n";
-            cout << limite << "  limite \n";
             limite += (3*salarioMensal);
             saldo += limite;
             
@@ -90,7 +86,7 @@
     };
 
     int main(){
-
+        Conta *conta;
 
         for (int i = 0; i < 2; i++)
         {
@@ -106,25 +102,21 @@
             cin >> deposito;
             cin >> saque;
             cin.ignore();
+
             
-            if (i ==0)
+
+            if (i == 0)
             {
-                Conta conta(nome, nconta, salario);
-                conta.sacar(saque);
-                conta.depositar(deposito);
-                conta.definirLimite();
-
-                cout << conta.getNome() << ", cc: " << conta.getnumConta() << " salário " << ", saldo total disponível: "<<conta.getSaldo()  << endl;
-                conta.~Conta();
+                conta = new Conta(nome, nconta, salario);
+                
             }else{
-
-                ContaEspecial conta(nome, nconta , salario);
-                conta.sacar(saque);
-                conta.depositar(deposito);
-                conta.definirLimite();
-
-                cout << conta.getNome() << ", cc: " << conta.getnumConta() << " salário " << ", saldo total disponível: "<<conta.getSaldo()  << endl; 
+                conta = new ContaEspecial(nome, nconta, salario);
             }
+
+            conta->sacar(saque);
+            conta->depositar(deposito);
+            conta->definirLimite();
+            cout << conta->getNome() << ", cc: " << conta->getnumConta() << ", salário "<<conta->getsalarioMensal() << ", saldo total disponível: R$ "<<conta->getSaldo()  << endl;
 
         }
 
